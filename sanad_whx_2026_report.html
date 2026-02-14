@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير الأداء التنفيذي - سند WHX 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2563eb;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gradient-1: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient-2: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+            --gradient-3: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+            background: linear-gradient(to bottom, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: var(--gradient-1);
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Tajawal', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 10px;
+            opacity: 0.95;
+            animation: slideDown 0.8s ease-out 0.2s backwards;
+        }
+
+        .event-tag {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            border: 2px solid var(--accent);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 20px;
+            animation: slideDown 0.8s ease-out 0.4s backwards;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        .section {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        .section-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: 900;
+            font-size: 1.4rem;
+            margin-left: 15px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        h2 {
+            font-family: 'Tajawal', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #93c5fd;
+            margin: 30px 0 20px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(245, 158, 11, 0.3) 0%, rgba(251, 146, 60, 0.3) 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #fbbf24;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(30, 64, 175, 0.2) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(96, 165, 250, 0.6);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            margin: 30px 0;
+        }
+
+        .metrics-table tr {
+            background: rgba(15, 23, 42, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .metrics-table tr:hover {
+            background: rgba(30, 58, 138, 0.4);
+            transform: scale(1.02);
+        }
+
+        .metrics-table td {
+            padding: 20px 25px;
+            border: none;
+        }
+
+        .metrics-table td:first-child {
+            border-radius: 12px 0 0 12px;
+            font-weight: 500;
+        }
+
+        .metrics-table td:last-child {
+            border-radius: 0 12px 12px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fbbf24;
+        }
+
+        .metric-value-success {
+            color: #34d399 !important;
+        }
+
+        .metric-value-primary {
+            color: #60a5fa !important;
+        }
+
+        ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        ul li {
+            padding: 15px 20px;
+            margin: 12px 0;
+            background: rgba(15, 23, 42, 0.4);
+            border-right: 4px solid var(--secondary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        ul li:hover {
+            background: rgba(30, 58, 138, 0.3);
+            border-right-color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--gradient-2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+            border: 2px solid rgba(16, 185, 129, 0.4);
+            border-radius: 16px;
+            padding: 35px;
+            margin: 40px 0;
+        }
+
+        .conclusion-box p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #6ee7b7;
+            margin: 0;
+        }
+
+        .checkmark {
+            color: var(--success);
+            font-size: 1.4rem;
+            margin-left: 10px;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+            border: 2px solid rgba(124, 58, 237, 0.4);
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .next-steps h2 {
+            color: #c4b5fd;
+        }
+
+        .step-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-right: 5px solid #a78bfa;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: rgba(30, 41, 59, 0.8);
+            transform: translateX(-8px);
+            border-right-color: #c4b5fd;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #c4b5fd;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(100, 116, 139, 0.3);
+            margin-top: 60px;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5), transparent);
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 25px;
+            }
+            
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .audience-card {
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+            border: 1px solid rgba(45, 212, 191, 0.3);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .audience-card:hover {
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
+            border-color: rgba(45, 212, 191, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .audience-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5eead4;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>تقرير الأداء التنفيذي</h1>
+            <div class="subtitle">الحملة الرقمية وإطلاق موقع سند الإلكتروني</div>
+            <div class="event-tag">معرض الصحة العالمي WHX 2026</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Background -->
+        <div class="section">
+            <h2><span class="section-number">1</span>الخلفية الاستراتيجية للمشروع</h2>
+            <p>بدأت صفحة سند على LinkedIn من نقطة الصفر بدون أي وجود رقمي سابق:</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">متابع</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">منشور فقط</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">حملات سابقة</div>
+                </div>
+            </div>
+
+            <h3>الهدف الاستراتيجي</h3>
+            <ul>
+                <li>بناء الوعي بالعلامة التجارية وتعزيز الحضور في معرض WHX</li>
+                <li>تموضع سند كشريك استراتيجي لشركة Epic العالمية</li>
+                <li>الوصول إلى صناع القرار في قطاع الصيدلة والرعاية الصحية بالمملكة</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Website Development -->
+        <div class="section">
+            <h2><span class="section-number">2</span>تطوير الموقع الإلكتروني</h2>
+            <p>تم بناء <span class="highlight">أساس رقمي متكامل</span> لسند من خلال تطوير موقع إلكتروني احترافي بالمواصفات التالية:</p>
+            
+            <h3>المواصفات التقنية</h3>
+            <ul>
+                <li>تصميم حديث واحترافي متوافق مع هوية قطاع الرعاية الصحية</li>
+                <li>متجاوب بالكامل (أجهزة الحاسوب، الأجهزة اللوحية، الهواتف الذكية)</li>
+                <li>محسّن لمحركات البحث (SEO)</li>
+                <li>اجتياز اختبارات سرعة الأداء</li>
+                <li>تنقل سلس بنظام الروابط المباشرة (Anchor Navigation)</li>
+            </ul>
+
+            <h3>المحتوى والوظائف</h3>
+            <ul>
+                <li>أقسام المنتجات بتفاصيل شاملة</li>
+                <li>قسم الفعاليات والمعارض</li>
+                <li>تكامل التقويم (إضافة الفعاليات مباشرة إلى تقويم المستخدم)</li>
+                <li>نموذج تواصل مرتبط بالبريد الرسمي للشركة</li>
+            </ul>
+
+            <div class="conclusion-box">
+                <p>أساس رقمي متكامل يعزز المصداقية وتجربة المستخدم ويدعم جهود التسويق طويلة الأمد</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Campaign Performance -->
+        <div class="section">
+            <h2><span class="section-number">3</span>أداء الحملة الإعلانية على LinkedIn</h2>
+            
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="badge">حملة تفاعل Engagement Campaign</span>
+                <div style="margin-top: 20px;">
+                    <span style="font-size: 1.2rem; color: #cbd5e1;">إجمالي الإنفاق: </span>
+                    <span style="font-size: 2.5rem; font-weight: 900; color: #fbbf24;">١٬٨٦١</span>
+                    <span style="font-size: 1.5rem; color: #fbbf24;"> ريال سعودي فقط</span>
+                </div>
+            </div>
+
+            <h3>المؤشرات الرئيسية للأداء</h3>
+            
+            <table class="metrics-table">
+                <tr>
+                    <td>إجمالي الظهور (Impressions)</td>
+                    <td class="metric-value-primary">22,693</td>
+                </tr>
+                <tr>
+                    <td>عدد الأشخاص الذين تم الوصول إليهم (Reach)</td>
+                    <td class="metric-value-primary">14,413</td>
+                </tr>
+                <tr>
+                    <td>إجمالي النقرات (Clicks)</td>
+                    <td class="metric-value-primary">810</td>
+                </tr>
+                <tr>
+                    <td>معدل النقر (CTR)</td>
+                    <td class="metric-value-success">3.57%</td>
+                </tr>
+                <tr>
+                    <td>إجمالي التفاعلات (Engagements)</td>
+                    <td class="metric-value-primary">817</td>
+                </tr>
+                <tr>
+                    <td>معدل التفاعل (Engagement Rate)</td>
+                    <td class="metric-value-success">3.6%</td>
+                </tr>
+                <tr>
+                    <td>الإعجابات والتفاعلات</td>
+                    <td class="metric-value-primary">153</td>
+                </tr>
+                <tr>
+                    <td>نقرات للموقع الإلكتروني</td>
+                    <td class="metric-value-primary">62</td>
+                </tr>
+                <tr>
+                    <td>متوسط تكلفة النقرة (CPC)</td>
+                    <td class="metric-value-success">2.30 ريال</td>
+                </tr>
+                <tr>
+                    <td>متوسط تكلفة الألف ظهور (CPM)</td>
+                    <td class="metric-value-success">82.03 ريال</td>
+                </tr>
+                <tr>
+                    <td>نسبة اختراق الجمهور</td>
+                    <td class="metric-value-success">72.1%</td>
+                </tr>
+            </table>
+
+            <div class="conclusion-box">
+                <p><span class="checkmark">✓</span> أداء عالي الكفاءة مقابل ميزانية محدودة، مع معدلات تفاعل ممتازة وتكلفة تنافسية للنقرة</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Audience Impact -->
+        <div class="section">
+            <h2><span class="section-number">4</span>التأثير على الجمهور المستهدف</h2>
+            <p>نجحت الحملة في الوصول إلى <span class="highlight">المهنيين المتخصصين</span> في القطاع الصيدلاني والصحي:</p>
+            
+            <h3>أبرز المسميات الوظيفية التي تم الوصول إليها</h3>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-title">صيادلة<br>(Pharmacists)</div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-title">صيادلة إكلينيكيين<br>(Clinical Pharmacists)</div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-title">صيادلة المستشفيات<br>(Hospital Pharmacists)</div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-title">مديرو الصيدليات<br>(Pharmacy Managers)</div>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-title">أخصائيو الصيدلة<br>(Pharmacy Specialists)</div>
+                </div>
+            </div>
+
+            <div class="conclusion-box" style="margin-top: 40px;">
+                <p><span class="checkmark">✓</span> توافق مباشر مع الجمهور المستهدف في قطاع الأتمتة الصيدلانية، مع التركيز على الجودة وليس الكمية العشوائية</p>
+            </div>
+        </div>
+
+        <!-- Section 5: Organic Growth -->
+        <div class="section">
+            <h2><span class="section-number">5</span>النمو العضوي والحضور الرقمي</h2>
+            <p>بعد انتهاء الحملة والمعرض، حققت صفحة سند النتائج التالية:</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">401</div>
+                    <div class="stat-label">متابع جديد</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0 → 401</div>
+                    <div class="stat-label">نمو من الصفر</div>
+                </div>
+            </div>
+
+            <ul>
+                <li>نشر منشورات متعددة احترافية</li>
+                <li>تفاعل نشط خلال فترة معرض WHX</li>
+                <li>إنشاء حضور مهني ومصداقية رقمية</li>
+            </ul>
+
+            <div class="conclusion-box">
+                <p><span class="checkmark">✓</span> نجاح في التموضع الرقمي وبناء أساس قوي للمصداقية وأصل طويل الأمد للعلامة التجارية</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Scope of Work -->
+        <div class="section">
+            <h2><span class="section-number">6</span>نطاق العمل الرقمي المتكامل</h2>
+            <p>شمل المشروع تنفيذ <span class="highlight">حملة رقمية شاملة</span> تغطي جميع الجوانب التالية:</p>
+            
+            <ul>
+                <li>إعداد وتحسين صفحة LinkedIn</li>
+                <li>إنشاء محتوى (منشورات، عناوين، رسائل تموضع)</li>
+                <li>تغطية محتوى المعرض والفعاليات</li>
+                <li>استراتيجية الحملة المدفوعة</li>
+                <li>استهداف الجمهور الدقيق</li>
+                <li>تطوير الموقع الإلكتروني الكامل</li>
+                <li>تتبع الأداء والتحليلات</li>
+                <li>مواءمة الرسائل الاستراتيجية مع شراكة Epic</li>
+            </ul>
+
+            <div class="conclusion-box">
+                <p>المشروع يمثل تفعيل رقمي متكامل وليس مجرد إعلانات منفردة</p>
+            </div>
+        </div>
+
+        <!-- Section 7: Executive Conclusion -->
+        <div class="section">
+            <h2><span class="section-number">7</span>الخلاصة التنفيذية</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">حققت الحملة الرقمية لسند في معرض WHX 2026 <span class="highlight">نتائج استراتيجية قوية</span>:</p>
+            
+            <ul>
+                <li><span class="checkmark">✓</span> أداء إطلاق قوي من نقطة الصفر</li>
+                <li><span class="checkmark">✓</span> ظهور عالي خلال فترة معرض WHX</li>
+                <li><span class="checkmark">✓</span> وصول مباشر إلى المهنيين في القطاع الصيدلاني</li>
+                <li><span class="checkmark">✓</span> استخدام فعّال وذكي للميزانية</li>
+                <li><span class="checkmark">✓</span> إنشاء أساس رقمي متين للحملات المستقبلية</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h2>الخطوة القادمة</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">للاستفادة من الزخم المحقق وتعزيز النتائج، نوصي بالتالي:</p>
+            
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">1</span>استراتيجية إعادة الاستهداف (Retargeting)</div>
+                <p style="margin: 0;">الوصول مجدداً إلى الأشخاص الذين تفاعلوا مع الحملة السابقة</p>
+            </div>
+
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">2</span>مرحلة توليد العملاء المحتملين (Lead Generation)</div>
+                <p style="margin: 0;">تحويل التفاعل إلى فرص تجارية ملموسة</p>
+            </div>
+
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">3</span>توسيع المحتوى</div>
+                <p style="margin: 0;">نشر محتوى تعليمي ودراسات حالة لتعزيز الثقة والخبرة</p>
+            </div>
+
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">4</span>بناء العلامة التجارية المستمر</div>
+                <p style="margin: 0;">الحفاظ على التواجد النشط والتفاعل المستمر مع الجمهور</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>تم إعداد هذا التقرير للإدارة التنفيذية | WHX 2026</p>
+        </div>
+    </div>
+</body>
+</html>
